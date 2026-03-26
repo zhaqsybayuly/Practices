@@ -1,14 +1,7 @@
-"""
-Practice 5 — 2.1: Python RegEx Examples
-Covers: re.search, re.findall, re.split, re.sub, re.match,
-        metacharacters, special sequences, quantifiers, flags
-"""
-
 import re
 
-# ─────────────────────────────────────────────
 # 1. re.search() — Find FIRST match anywhere in the string
-# ─────────────────────────────────────────────
+
 print("=" * 50)
 print("1. re.search()")
 
@@ -21,9 +14,9 @@ match2 = re.search(r"\d+", "Order number: 4892")
 print(f"  First number: {match2.group()}")
 
 
-# ─────────────────────────────────────────────
+
 # 2. re.match() — Match only at the BEGINNING of the string
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("2. re.match()")
 
@@ -31,9 +24,9 @@ print(f"  Match 'Hello': {re.match(r'Hello', 'Hello world')}")
 print(f"  Match 'world': {re.match(r'world', 'Hello world')}")  # None
 
 
-# ─────────────────────────────────────────────
+
 # 3. re.findall() — Find ALL matches, return list
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("3. re.findall()")
 
@@ -45,9 +38,9 @@ numbers = re.findall(r"\d+", "I have 3 cats and 12 dogs and 1 parrot")
 print(f"  Numbers: {numbers}")
 
 
-# ─────────────────────────────────────────────
+
 # 4. re.split() — Split string by pattern
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("4. re.split()")
 
@@ -58,9 +51,9 @@ result2 = re.split(r"(\d+)", "abc123def456ghi")
 print(f"  Split keeping delimiter:  {result2}")
 
 
-# ─────────────────────────────────────────────
+
 # 5. re.sub() — Replace matches
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("5. re.sub()")
 
@@ -78,9 +71,9 @@ masked = re.sub(r"\+7\s?\d{3}\s?\d{3}\s?\d{4}", "[PHONE]", text)
 print(f"  Masked phones: {masked}")
 
 
-# ─────────────────────────────────────────────
+
 # 6. Metacharacters
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("6. Metacharacters: . ^ $ * + ? [] | ()")
 
@@ -92,9 +85,9 @@ print(f"  '[bh]at' (bat or hat): {re.findall(r'[bh]at', s)}")
 print(f"  'cat|rat': {re.findall(r'cat|rat', s)}")
 
 
-# ─────────────────────────────────────────────
+
 # 7. Special Sequences
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("7. Special Sequences: \\d \\w \\s \\D \\W \\S")
 
@@ -113,9 +106,9 @@ print(f"  \\W  (non-word):      {non_word}")
 print(f"  \\b  (word boundary): {boundary}")
 
 
-# ─────────────────────────────────────────────
+
 # 8. Quantifiers: {n}, {n,}, {n,m}, *, +, ?
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("8. Quantifiers")
 
@@ -127,9 +120,9 @@ four_dig = re.findall(r'\d{4}', '1234 56 7890 12')
 print(f"  '\\d{{4}}'   (exactly 4 dig): {four_dig}")
 
 
-# ─────────────────────────────────────────────
+
 # 9. Flags
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("9. Flags: re.IGNORECASE, re.MULTILINE, re.DOTALL")
 
@@ -146,9 +139,9 @@ ds = bool(re.search(r'line1.+line3', dotall, re.DOTALL))
 print(f"  DOTALL 'line1.+line3': {ds}")
 
 
-# ─────────────────────────────────────────────
+
 # 10. regex.md exercises
-# ─────────────────────────────────────────────
+
 print("\n" + "=" * 50)
 print("10. regex.md Exercises")
 

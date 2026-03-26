@@ -1,13 +1,8 @@
-"""
-Practice 5 — 2.2: Receipt Parser
-Parses raw.txt pharmacy receipt using Python re module.
-"""
-
 import re
 import json
 
 # ── Load receipt text ──────────────────────────────────────────────────────
-with open("raw.txt", encoding="utf-8") as f:
+with open("Practice5/raw.txt", encoding="utf-8") as f:
     text = f.read()
 
 
@@ -126,6 +121,6 @@ print("=" * 55)
 print(json.dumps(receipt_json, ensure_ascii=False, indent=2))
 
 # Save to file
-with open("receipt_parsed.json", "w", encoding="utf-8") as out:
+with open("Practice5/receipt_parsed.json", "w", encoding="utf-8") as out:
     json.dump(receipt_json, out, ensure_ascii=False, indent=2)
 print("\n  Saved to receipt_parsed.json")
