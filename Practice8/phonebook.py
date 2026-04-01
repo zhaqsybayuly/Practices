@@ -3,7 +3,6 @@ from connect import connect
 
 
 def create_table():
-    """Create the phonebook table if it doesn't exist."""
     conn = connect()
     if not conn:
         return
@@ -25,16 +24,14 @@ def create_table():
 
 
 def create_functions_and_procedures():
-    """Create all SQL functions and procedures from .sql files."""
+    """Read .sql files and register them in the database."""
     conn = connect()
     if not conn:
         return
     try:
         cur = conn.cursor()
-        # Read and execute functions.sql
         with open('functions.sql', 'r') as f:
             cur.execute(f.read())
-        # Read and execute procedures.sql
         with open('procedures.sql', 'r') as f:
             cur.execute(f.read())
         conn.commit()
@@ -46,7 +43,7 @@ def create_functions_and_procedures():
         conn.close()
 
 
-# ---- Task 1: Search by pattern ----
+# calls the search_contacts() function from functions.sql
 def search_by_pattern():
     pattern = input("Enter search pattern: ")
     conn = connect()
@@ -70,7 +67,7 @@ def search_by_pattern():
         conn.close()
 
 
-# ---- Task 2: Upsert contact ----
+# calls upsert_contact() procedure — CALL instead of SELECT
 def upsert_contact():
     name = input("Enter name: ")
     phone = input("Enter phone: ")
@@ -89,7 +86,8 @@ def upsert_contact():
         conn.close()
 
 
-# ---- Task 3: Bulk insert with validation ----
+# collects names/phones into lists, sends them as arrays to postgres
+# the function validates phones and returns any bad entries
 def bulk_insert():
     names = []
     phones = []
@@ -111,6 +109,7 @@ def bulk_insert():
         return
     try:
         cur = conn.cursor()
+        # psycopg2 converts python lists to postgres arrays automatically
         cur.execute("SELECT * FROM bulk_insert_contacts(%s, %s)", (names, phones))
         invalid = cur.fetchall()
         conn.commit()
@@ -129,7 +128,7 @@ def bulk_insert():
         conn.close()
 
 
-# ---- Task 4: Paginated query ----
+# limit = how many to show, offset = how many to skip
 def query_paginated():
     try:
         limit = int(input("Enter page size (limit): "))
@@ -159,7 +158,7 @@ def query_paginated():
         conn.close()
 
 
-# ---- Task 5: Delete contact ----
+# pass name or phone, the other one goes as NULL
 def delete_contact():
     print("1. Delete by Name")
     print("2. Delete by Phone")

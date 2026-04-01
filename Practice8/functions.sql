@@ -1,7 +1,5 @@
--- ============================================
--- Function 1: Search contacts by pattern
--- Matches against name or phone number
--- ============================================
+-- find contacts where name or phone matches the given pattern
+-- using ILIKE so it's case-insensitive
 CREATE OR REPLACE FUNCTION search_contacts(pattern TEXT)
 RETURNS TABLE(id INT, name VARCHAR, phone VARCHAR) AS $$
 BEGIN
@@ -13,9 +11,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- ============================================
--- Function 2: Get contacts with pagination
--- ============================================
+-- return contacts in chunks instead of all at once
+-- page_limit = how many rows, page_offset = how many to skip
 CREATE OR REPLACE FUNCTION get_contacts_paginated(page_limit INT, page_offset INT)
 RETURNS TABLE(id INT, name VARCHAR, phone VARCHAR) AS $$
 BEGIN
