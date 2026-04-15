@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <style>
+      .black { fill: #1a1a1a; }
+      .white { fill: #ffffff; }
+      .red { fill: #d32027; }
+      .line { stroke: #1a1a1a; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <g id="mickey-body-only">
+    <!-- Құйрық -->
+    <path d="M 230 400 C 140 460, 150 360, 190 380" class="line" stroke-width="4"/>
+
+    <!-- Қара аяқтары -->
+    <path d="M 215 330 L 190 400" stroke="#1a1a1a" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 285 330 L 300 400" stroke="#1a1a1a" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- Сол жақ аяқ киім -->
+    <g id="left-shoe">
+      <path d="M 125 435 C 100 435, 100 400, 130 395 C 160 390, 180 370, 215 385 C 245 400, 220 440, 180 435 Z" fill="#dcdcdc"/>
+      <path d="M 125 430 C 100 430, 100 395, 130 390 C 160 385, 180 365, 215 380 C 245 395, 220 435, 180 430 Z" class="white"/>
+      <path d="M 125 430 C 100 430, 100 395, 130 390 C 160 385, 180 365, 215 380 C 245 395, 220 435, 180 430 Z" class="line" stroke-width="3"/>
+      <!-- Аяқ киім қатпары -->
+      <path d="M 170 380 C 185 390, 195 400, 180 425" class="line" stroke-width="2.5"/>
+      <!-- Шалбардан шыққан балақ -->
+      <ellipse cx="205" cy="385" rx="18" ry="10" class="white" stroke="#1a1a1a" stroke-width="3"/>
+    </g>
+
+    <!-- Оң жақ аяқ киім -->
+    <g id="right-shoe">
+      <path d="M 370 440 C 400 440, 400 405, 370 400 C 340 395, 320 375, 285 390 C 255 405, 280 445, 320 440 Z" fill="#dcdcdc"/>
+      <path d="M 370 435 C 400 435, 400 400, 370 395 C 340 390, 320 370, 285 385 C 255 400, 280 440, 320 435 Z" class="white"/>
+      <path d="M 370 435 C 400 435, 400 400, 370 395 C 340 390, 320 370, 285 385 C 255 400, 280 440, 320 435 Z" class="line" stroke-width="3"/>
+      <!-- Аяқ киім қатпары -->
+      <path d="M 320 385 C 310 395, 305 405, 320 430" class="line" stroke-width="2.5"/>
+      <!-- Шалбардан шыққан балақ -->
+      <ellipse cx="295" cy="390" rx="18" ry="10" class="white" stroke="#1a1a1a" stroke-width="3"/>
+    </g>
+
+    <!-- Қызыл шалбар -->
+    <path d="M 210 260 C 180 280, 190 330, 205 340 L 250 330 L 295 340 C 310 330, 320 280, 290 260 Z" class="red" stroke="#1a1a1a" stroke-width="3"/>
+    <!-- Шалбар түймелері -->
+    <ellipse cx="225" cy="295" rx="10" ry="16" class="white" stroke="#1a1a1a" stroke-width="2"/>
+    <ellipse cx="275" cy="295" rx="10" ry="16" class="white" stroke="#1a1a1a" stroke-width="2"/>
+
+    <!-- Қара кеудесі (ортаға дейін барады, үстін сағат тілдері жабады) -->
+    <path d="M 210 260 C 210 220, 230 190, 250 190 C 270 190, 290 220, 290 260 Z" class="black"/>
+
+    <!-- БАСЫ -->
+    <!-- Құлақтар -->
+    <circle cx="185" cy="85" r="45" class="black"/>
+    <circle cx="330" cy="95" r="45" class="black"/>
+    <!-- Бастың қара негізі -->
+    <circle cx="250" cy="155" r="60" class="black"/>
+
+    <!-- Ақ беті (Бетперде) -->
+    <path d="M 250 110 C 200 110, 195 145, 205 165 C 190 180, 190 205, 215 215 C 230 235, 270 235, 285 215 C 310 205, 310 180, 295 165 C 305 145, 300 110, 250 110 Z" class="white"/>
+
+    <!-- Көздері -->
+    <ellipse cx="235" cy="140" rx="7" ry="20" class="black"/>
+    <ellipse cx="265" cy="140" rx="7" ry="20" class="black"/>
+    <!-- Көздегі жарқыл -->
+    <ellipse cx="235" cy="130" rx="2" ry="5" class="white"/>
+    <ellipse cx="265" cy="130" rx="2" ry="5" class="white"/>
+
+    <!-- Мұрны -->
+    <ellipse cx="250" cy="175" rx="16" ry="10" class="black"/>
+    <path d="M 242 170 Q 250 168 258 170" class="line" stroke="white" stroke-width="2"/>
+
+    <!-- Аузы -->
+    <path d="M 210 190 C 230 215, 270 215, 290 190" class="line" stroke-width="3"/>
+    <!-- Күлкі сызықтары -->
+    <path d="M 205 180 C 210 185, 210 195, 200 195" class="line" stroke-width="2"/>
+    <path d="M 295 180 C 290 185, 290 195, 300 195" class="line" stroke-width="2"/>
+    <!-- Ашық ауыз -->
+    <path d="M 222 200 C 235 235, 265 235, 278 200 Z" class="black"/>
+    <!-- Тілі -->
+    <path d="M 230 215 C 240 230, 260 230, 270 215 C 260 210, 240 210, 230 215 Z" class="red"/>
+  </g>
+</svg>

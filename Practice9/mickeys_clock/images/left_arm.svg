@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <g id="left-arm">
+    <!-- Black sleeve from center pointing left -->
+    <rect x="170" y="244" width="82" height="14" rx="4" fill="#1a1a1a"/>
+
+    <!-- White cuff -->
+    <rect x="162" y="236" width="12" height="30" rx="2" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+
+    <!-- White palm -->
+    <path d="M 162 236
+             Q 146 230, 132 236
+             Q 118 230, 108 238
+             Q 98 234, 96 250
+             Q 96 264, 108 270
+             Q 128 274, 148 270
+             Q 160 270, 162 262 Z"
+          fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- Thumb -->
+    <path d="M 146 234
+             Q 142 222, 130 224
+             Q 122 228, 126 238 Z"
+          fill="#ffffff" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- 3 dart lines -->
+    <path d="M 144 250 Q 144 260 146 268" stroke="#1a1a1a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M 130 250 Q 130 260 132 268" stroke="#1a1a1a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M 116 250 Q 116 260 118 268" stroke="#1a1a1a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
