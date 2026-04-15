@@ -48,3 +48,10 @@ class Player:
         if not self.has_tracks():
             return "(no tracks)"
         return os.path.basename(self.tracks[self.current])
+
+    def elapsed_seconds(self):
+        # returns how many seconds the current track has been playing
+        if self.status != "Playing":
+            return 0
+        ms = pygame.mixer.music.get_pos()
+        return max(0, ms // 1000)

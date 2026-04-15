@@ -22,9 +22,13 @@ def draw_ui():
         pygame.display.flip()
         return
 
+    secs = player.elapsed_seconds()
+    time_str = f"{secs // 60}:{secs % 60:02d}"
+
     lines = [
         f"Track: {player.current_name()}",
         f"Status: {player.status}",
+        f"Time: {time_str}",
         f"[{player.current + 1} / {len(player.tracks)}]",
         "",
         "P = Play   S = Stop",
