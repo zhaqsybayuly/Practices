@@ -24,6 +24,14 @@ font = pygame.font.SysFont("Arial", 24, bold=True)   # font for showing the coin
 
 # player car settings
 CAR_W, CAR_H = 50, 80                        # width and height of the player car
+
+# load car images and resize them to the car size
+player_img = pygame.image.load("img/red_car.png").convert_alpha()
+player_img = pygame.transform.smoothscale(player_img, (CAR_W, CAR_H))
+enemy_img = pygame.image.load("img/blue_car.png").convert_alpha()
+enemy_img = pygame.transform.smoothscale(enemy_img, (CAR_W, CAR_H))
+# flip the enemy 180° so its front points down (toward the player)
+enemy_img = pygame.transform.rotate(enemy_img, 180)
 player_x = WIDTH // 2 - CAR_W // 2           # start the car centered horizontally
 player_y = HEIGHT - CAR_H - 20               # place the car near the bottom of the screen
 player_speed = 5                             # how many pixels the car moves per frame
@@ -54,17 +62,11 @@ def draw_road():
 
 
 def draw_player():
-    # draw the player car body
-    pygame.draw.rect(screen, BLUE, (player_x, player_y, CAR_W, CAR_H), border_radius=6)
-    # draw a small black windshield on top of the car
-    pygame.draw.rect(screen, BLACK, (player_x + 8, player_y + 12, CAR_W - 16, 20), border_radius=3)
+    screen.blit(player_img, (player_x, player_y))    # draw the blue car image
 
 
 def draw_enemy():
-    # draw the enemy car body
-    pygame.draw.rect(screen, RED, (enemy_x, enemy_y, enemy_w, enemy_h), border_radius=6)
-    # draw a small windshield on the bottom of the enemy car (it's facing the player)
-    pygame.draw.rect(screen, BLACK, (enemy_x + 8, enemy_y + enemy_h - 32, enemy_w - 16, 20), border_radius=3)
+    screen.blit(enemy_img, (enemy_x, enemy_y))       # draw the red car image
 
 
 def draw_coin():
